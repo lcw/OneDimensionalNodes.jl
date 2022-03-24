@@ -1,0 +1,7 @@
+name = "OneDimensionalNodes"
+uuid = "c5182250-406c-41f5-b9da-836c94d3c2ab"
+authors = ["Lucas C Wilcox <lucas@swirlee.com>"]
+version = "0.1.0"
+
+[compat]
+julia = "1.6"
