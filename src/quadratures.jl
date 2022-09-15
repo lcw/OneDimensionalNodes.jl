@@ -218,7 +218,7 @@ function gaussrule(lo, hi, a, b, endpoint::EndPoint, maxiterations=100)
     return a[idx], w[idx]
 end
 
-function tridiagonalshiftsolve(n, shift, a, b) where {T}
+function tridiagonalshiftsolve(n, shift, a, b)
     #
     # Perform elimination to find the nth component s = delta[n]
     # of the solution to the nxn linear system
