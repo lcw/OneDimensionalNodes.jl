@@ -113,7 +113,7 @@ for the interval `-1 < x < 1` with weight function `w(x) = 1`.
 Use `endpoint=LeftEndPoint()`, `RightEndPoint() ` or `BothEndPoints()` for the
 left Radau, right Radau, or Lobatto rules, respectively.
 """
-function legendregauss(::Type{T}, n, endpoint=NeitherEndPoint()) where {T}
+function legendregauss(::Type{T}, n::Integer, endpoint=NeitherEndPoint()) where {T}
     @assert n ≥ 1
     a, b = legendrecoefficients(T, n)
     return gaussrule(-one(T), one(T), a, b, endpoint)
@@ -132,7 +132,7 @@ legendregauss(n, endpoint::EndPoint=NeitherEndPoint()) = legendregauss(Float64, 
 Returns points `x` and weights `w` for the `n`-point Legendre-Gauss-Lobatto rule
 for the interval `-1 ≤ x ≤ 1` with weight function `w(x) = 1`.
 """
-function legendregausslobatto(::Type{T}, n) where {T}
+function legendregausslobatto(::Type{T}, n::Integer) where {T}
     return legendregauss(T, n, BothEndPoint())
 end
 
@@ -141,9 +141,9 @@ end
 
 Convenience function with type `T = Float64`:
 """
-legendregausslobatto(n) = legendregausslobatto(Float64, n)
+legendregausslobatto(n::Integer) = legendregausslobatto(Float64, n)
 
-function legendrecoefficients(::Type{T}, n) where {T}
+function legendrecoefficients(::Type{T}, n::Integer) where {T}
     a = zeros(T, n)
     b = zeros(T, n + 1)
     b[1] = sqrt(convert(T, 2))
