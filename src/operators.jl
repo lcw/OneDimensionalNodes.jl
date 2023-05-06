@@ -99,7 +99,7 @@ end
     spectralinterpolation(r, s, w=barycentricweights(r))
 
 Create the interpolation matrix, type analogous to `r`, for polynomials defined
-on the points `r` with associated barycentric weights `w` evaulated at the
+on the points `r` with associated barycentric weights `w` evaluated at the
 points `s`. See also `barycentricweights` and `spectralderivative`.
 
 # Examples
